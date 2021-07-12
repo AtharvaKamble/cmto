@@ -1,0 +1,29 @@
+{
+  "name": "commento",
+  "version": "1.0.0",
+  "description": "Commeto",
+  "main": "dist/commento.js",
+  "scripts": {
+    "start": "node dist/commento.js",
+    "dev": "nodemon dist/commento.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtharvaKamble/commento.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AtharvaKamble/commento/issues"
+  },
+  "homepage": "https://github.com/AtharvaKamble/commento#readme",
+  "devDependencies": {
+    "@types/argparse": "^2.0.10",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "@types/node": "^16.3.1",
+    "argparse": "^2.0.1"
+  }
+}
