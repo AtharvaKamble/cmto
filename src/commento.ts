@@ -1,12 +1,10 @@
-import { getComments, parseFlags } from "./utils/helper"
+import { getComments, parseFlags } from "./utils/helper";
 
-
-const isDeveloping: boolean = true
-const SLICE_FACTOR: number = isDeveloping ? 2 : 1
+const isDeveloping: boolean = true;
 
 // Get arguments excluding default cli
-const filteredArgs = process.argv.slice(SLICE_FACTOR)
-const {flags, files} = parseFlags(filteredArgs)  
+const { flags, files } = parseFlags(process.argv);
 
-console.log(files)
-
+export function cli(args: any) {
+  console.log(args);
+}
