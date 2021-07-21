@@ -1,10 +1,37 @@
-import { getComments, parseFlags } from "./utils/helper";
+import arg from "arg";
+import { isEmpty } from "lodash";
+const pack = require("../package.json");
 
-const isDeveloping: boolean = true;
+function parseArguments(rawArgs: any) {
+  const args = arg(
+    {
+      "--yes": Boolean,
+      "--help": Boolean,
+      "--version": Boolean,
+      "-y": "--yes",
+      "-h": "--help",
+      "-v": "--version",
+    },
+    {
+      argv: rawArgs.slice(2),
+    }
+  );
 
-// Get arguments excluding default cli
-const { flags, files } = parseFlags(process.argv);
+  if (isEmpty(rawArgs.slice(2)))
+    return "See cmto -h OR cmto --help for more information.";
+
+  if (args["-v"] || args["--version"]) return pack.version;
+
+  return {
+    skipPrompt: args["--yes"]
+      ? "This will cause you to skip to introduction"
+      : false,
+    help: args["--help"] ? "Usage: cmto [--flag] OR cmto [-f]" : false,
+  };
+}
 
 export function cli(args: any) {
-  console.log(args);
+  const parsed = parseArguments(args);
+
+  console.log(parsed);
 }
