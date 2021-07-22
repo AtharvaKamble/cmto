@@ -12,7 +12,8 @@
   },
   "scripts": {
     "start": "node dist/commento.js",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "build": "rm -rf ./dist && tsc"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   "homepage": "https://github.com/AtharvaKamble/commento#readme",
   "devDependencies": {
     "@types/argparse": "^2.0.10",
+    "@types/fs-extra": "^9.0.12",
     "@types/lodash": "^4.14.171",
     "nodemon": "^2.0.12"
   },
@@ -36,6 +38,7 @@
     "argparse": "^2.0.1",
     "dotenv": "^10.0.0",
     "esm": "^3.2.25",
+    "fs-extra": "^10.0.0",
     "lodash": "^4.17.21"
   }
 }
