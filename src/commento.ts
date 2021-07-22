@@ -8,6 +8,7 @@ function parseArguments(rawArgs: any) {
       "--yes": Boolean,
       "--help": Boolean,
       "--version": Boolean,
+      "--init": Boolean,
       "-y": "--yes",
       "-h": "--help",
       "-v": "--version",
@@ -21,6 +22,8 @@ function parseArguments(rawArgs: any) {
     return "See cmto -h OR cmto --help for more information.";
 
   if (args["-v"] || args["--version"]) return pack.version;
+
+  if (args["--init"]) return "Creating commento.config.js...";
 
   return {
     skipPrompt: args["--yes"]
