@@ -1,1 +1,1 @@
-export declare function cli(rawArgs: any): void;
+export declare function cli(rawArgs: any): Promise<void>;

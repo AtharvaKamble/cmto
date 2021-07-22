@@ -1,9 +1,15 @@
-import arg from "arg";
-import { isEmpty } from "lodash";
-import { parseArguments } from "./arguments/index";
-const pack = require("../package.json");
+import path from "path";
+// Self imports
+import { parseArguments } from "./parser";
+import { createConfig } from "./files";
 
-export function cli(rawArgs: any) {
+export async function cli(rawArgs: any) {
   const parsed = parseArguments(rawArgs);
+
+  if (parsed.createConfig) {
+    await createConfig();
+    return;
+  }
+
   console.log(parsed);
 }
