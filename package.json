@@ -1,31 +1,30 @@
 {
-  "name": "commento",
+  "name": "cmto",
   "version": "1.0.0",
-  "description": "Commento",
-  "main": "dist/commento.js",
+  "description": "cmto",
+  "main": "dist/cli.js",
   "bin": {
-    "commento": "bin/cmto",
     "cmto": "bin/cmto"
   },
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "start": "node dist/commento.js",
+    "start": "node dist/cli.js",
     "dev": "tsc --watch",
     "build": "rm -rf ./dist && tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AtharvaKamble/commento.git"
+    "url": "git+https://github.com/AtharvaKamble/cmto.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AtharvaKamble/commento/issues"
+    "url": "https://github.com/AtharvaKamble/cmto/issues"
   },
-  "homepage": "https://github.com/AtharvaKamble/commento#readme",
+  "homepage": "https://github.com/AtharvaKamble/cmto#readme",
   "devDependencies": {
     "@types/argparse": "^2.0.10",
     "@types/fs-extra": "^9.0.12",

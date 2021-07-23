@@ -13,9 +13,9 @@ const exec = promisify(cp.exec);
 export async function createConfig() {
   const { stdout: filesInDirectory } = await exec("ls -a");
 
-  const configFileName = "commento.config.js";
+  const configFileName = "cmto.config.js";
   if (filesInDirectory.search(configFileName) !== -1) {
-    console.log("Commento already initialzed!");
+    console.log("cmto already initialzed!");
     return;
   }
 
@@ -30,7 +30,7 @@ export async function createConfig() {
     nodeModulesPath,
     "lib",
     "node_modules",
-    "commento",
+    "cmto",
     "templates",
     "init"
   );
@@ -38,7 +38,7 @@ export async function createConfig() {
 
   try {
     await fse.copy(src, dest);
-    console.log("Commento initialzed!");
+    console.log("cmto initialzed!");
   } catch (error) {
     console.log(error);
   }
