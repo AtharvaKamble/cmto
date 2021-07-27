@@ -4,7 +4,7 @@ A cli to create an ease of collaboration among developers
 
 ## What is this?
 
-This is a command-line application which aims at making new huge codebases familiar to move around for new developers joining in.
+`cmto` is a command-line application that aims at making new huge codebases familiar to move around for new developers joining in.
 
 ## How to use it?
 
