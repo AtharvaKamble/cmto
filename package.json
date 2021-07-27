@@ -12,7 +12,8 @@
   "scripts": {
     "start": "node dist/cli.js",
     "dev": "tsc --watch",
-    "build": "rm -rf ./dist && tsc"
+    "build": "rm -rf ./dist && tsc",
+    "install-cmto": "npm i && npm run build && npm link"
   },
   "repository": {
     "type": "git",
