@@ -12,7 +12,7 @@
   "scripts": {
     "start": "node dist/cli.js",
     "dev": "tsc --watch",
-    "build": "rm -rf ./dist && tsc",
+    "build": "node scripts/build",
     "install-cmto": "npm i && npm run build && npm link"
   },
   "repository": {
