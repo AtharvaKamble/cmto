@@ -1,4 +1,23 @@
 const { promisify } = require("util");
 const exec = promisify(require("child_process").exec);
 
-const isWindows = process.platform === "win32";
+exec("npm install")
+  .then((data) => console.log(data))
+  .catch((error) => {
+    console.log(error);
+    return;
+  });
+
+exec("npm link")
+  .then((data) => console.log(data))
+  .catch((error) => {
+    console.log(error);
+    return;
+  });
+
+exec("npm run build")
+  .then((data) => console.log(data))
+  .catch((error) => {
+    console.log(error);
+    return;
+  });
