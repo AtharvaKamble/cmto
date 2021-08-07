@@ -13,7 +13,7 @@
     "start": "node dist/cli.js",
     "dev": "tsc --watch",
     "build": "node scripts/build",
-    "install-cmto": "npm i && npm run build && npm link"
+    "install-cmto": "node scripts/install-cmto"
   },
   "repository": {
     "type": "git",
