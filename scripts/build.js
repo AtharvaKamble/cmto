@@ -5,19 +5,31 @@ const exec = promisify(require("child_process").exec);
 const fs = require("fs").promises;
 
 async function deletePreviousCompiledJs() {
-  const isError = await fs.rm("./dist", { recursive: true, force: true });
+  try {
+    await fs.access("./dist");
+    const isError = await fs.rm("./dist", { recursive: true, force: true });
 
-  if (isError !== undefined) {
-    console.log(isError);
+    if (isError !== undefined) {
+      console.log(isError);
+      return;
+    }
+  } catch (error) {
+    console.log(error);
     return;
   }
 }
 
 async function deletePreviousCompiledTypes() {
-  const isError = await fs.rm("./types", { recursive: true, force: false });
+  try {
+    await fs.access("./types");
+    const isError = await fs.rm("./types", { recursive: true, force: false });
 
-  if (isError !== undefined) {
-    console.log(isError);
+    if (isError !== undefined) {
+      console.log(isError);
+      return;
+    }
+  } catch (error) {
+    console.log(error);
     return;
   }
 }
