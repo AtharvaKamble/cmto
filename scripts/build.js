@@ -13,8 +13,19 @@ async function deletePreviousCompiledJs() {
   }
 }
 
+async function deletePreviousCompiledTypes() {
+  const isError = await fs.rm("./types", { recursive: true, force: false });
+
+  if (isError !== undefined) {
+    console.log(isError);
+    return;
+  }
+}
+
 // 'npm run build' should delete the previously transpiled Javascript and then run the Typescript compiler
 deletePreviousCompiledJs();
+
+deletePreviousCompiledTypes();
 
 exec("tsc")
   .then((data) => console.log(data))
